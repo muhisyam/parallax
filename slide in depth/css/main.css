@@ -103,7 +103,7 @@ h1, h2, h3, h4 {
 
 .frame__bg {
     background-color: rgba(7, 20, 32, 0.3);
-    scale: 3;
+    scale: 10;
 }
 
 video.frame__media {
