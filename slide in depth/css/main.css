@@ -85,12 +85,20 @@ h1, h2, h3, h4 {
     font-size: calc(var(--index) * 3.3);
 }
 
+.frame h2.title {
+    background: linear-gradient(90deg, #fff360 0%, #f0e33f 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .frame__media {
     position: relative;
     width: calc(var(--index) * var(--side-small));
     height: calc(var(--index) * var(--side-big));
     background-position: center;
     background-size: cover;
+    border-radius: 30px;
+    box-shadow: 9px 10px 18px -9px rgba(0,0,0,0.5);
 }
 
 .frame__media-left {
@@ -109,6 +117,8 @@ h1, h2, h3, h4 {
 video.frame__media {
     width: calc(var(--index) * var(--side-big));
     height: calc(var(--index) * var(--side-small));
+    border-radius: none;
+    box-shadow: none;
 }
 
 video.frame__media-left {
