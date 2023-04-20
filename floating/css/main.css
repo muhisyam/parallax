@@ -7,6 +7,7 @@
 :root {
     --black: #141414;
     --index: calc(1vw + 1vh);
+    --transition: 1.25s cubic-bezier(.2, .5, 0, 1);
 }
 
 /* font family */
@@ -22,7 +23,7 @@ body {
 }
 
 .magic-list__item {
-    cursor: none;
+    /* cursor: none; */
     color: var(--black);
     text-decoration: none;
     display: block;
@@ -34,6 +35,7 @@ body {
 
 .magic-list__header {
     width: min-content;
+    transition: transform var(--transition);
 }
 
 .magic-list__item::before {
@@ -43,4 +45,11 @@ body {
     margin-left: calc(var(--index) * -2.25);
     margin-top: calc(var(--index) / 2);
     letter-spacing: .5px;
+    transition: transform var(--transition);
+    transition-delay: .025s;
+}
+
+.magic-list__item:hover .magic-list__header,
+.magic-list__item:hover::before {
+    transform: translate3d(calc(var(--index) * -5), 0, 0);
 }
