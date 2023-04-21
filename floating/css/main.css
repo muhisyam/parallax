@@ -33,9 +33,14 @@ body {
     counter-increment: my-counter;
 }
 
+.magic-list__item:first-child {
+    border-top: 1.5px solid var(--black);
+}
+
 .magic-list__header {
     width: min-content;
     transition: transform var(--transition);
+    will-change: transform;
 }
 
 .magic-list__item::before {
@@ -47,9 +52,27 @@ body {
     letter-spacing: .5px;
     transition: transform var(--transition);
     transition-delay: .025s;
+    will-change: transform;
 }
 
 .magic-list__item:hover .magic-list__header,
 .magic-list__item:hover::before {
     transform: translate3d(calc(var(--index) * -5), 0, 0);
+}
+
+.cursor {
+    --width: calc(var(--index) * 22);
+    --height: calc(var(--index) * 14);
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.cursor__image {
+    position: relative;
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
 }
