@@ -76,20 +76,28 @@ body {
     will-change: transform;
 }
 
+.magic-list__item:hover .cursor {
+    height: var(--height); 
+}
+
 .cursor__image {
+    --cursor-transform: translate3d(calc(var(--move-x) / -5), calc(var(--move-y) / -5), 0);
     position: relative;
     width: calc(var(--width) * 2);
     height: calc(var(--height) * 2);
-    top: calc(var(--height) * -.5);
-    left: calc(var(--width) * -.5);
+    top: calc(var(--height) * -.3);
+    left: calc(var(--width) * -.25);
+    background: no-repeat;
     background-position: center;
+    transform: var(--cursor-transform) scale(1.5);
+    transition: transform var(--transition-cursor);
 }
 
 .magic-list__item:last-child .cursor__image {
-    height: calc(var(--height) * 1.5);
+    height: calc(var(--height) * 1.8);
     background-position: bottom;
 }
 
-.magic-list__item:hover .cursor {
-    height: var(--height); 
+.magic-list__item:hover .cursor__image {
+    transform: var(--cursor-transform) scale(1);
 }
