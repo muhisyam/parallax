@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallax</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
+    <div class="gallery">
+        <div class="gallery__card">
+            <div>
+                <div>
+                    <article class="card">
+                        <img src="assets/floating.jpg" alt="">
+                        <div class="card__desc">
+                            <h3 class="card__title">Floating Image</h3>
+                        </div>
+                    </article>
+                </div>
+                <div>
+                    <article class="card">
+                        <img src="assets/depth.jpg" alt="">
+                        <div class="card__desc">
+                            <h3 class="card__title">Slide in depth</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery__overflow">
+            <div class="gallery__thumbs">
+                <div>
+                    <div class="gallery__thumbnail">
+                        <img class="gallery__thumbnail-img" src="assets/floating.jpg" alt="image thumbnail">
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery__thumbnail">
+                        <img class="gallery__thumbnail-img" src="assets/depth.jpg" alt="image thumbnail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <h1>Make parallax</h1>
+    
     <a href="/parallax/floating/index.html">Floating Parallax</a><br>
     <a href="/parallax/slide in depth/index.html">Depth slide parallax</a>
+
+    <script src="assets/app.js"></script>
 </body>
 </html>
