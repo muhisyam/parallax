@@ -1,0 +1,102 @@
+:root {
+    --first-color: hsl(30, 16%, 50%);
+    --text-color: #fff;
+    --text-color-black: hsl(30, 8%, 15%);
+    --body-color: hsl(30, 100%, 98%);
+    --h3-font-size: 1rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+      --h3-font-size: 1.125rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery {
+    height: 100vh;
+    display: grid;
+}
+
+.card {
+    position: relative;
+    width: 375px;
+    height: 180px;
+    border-radius: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.card::after,
+.card__img, 
+.card__desc {
+    position: absolute;
+}
+
+.card__img {
+    inset: 0;
+    margin: auto;
+    transition: transform .3s ;
+}
+
+.card::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 32%, hsla(0, 0%, 0%, .3) 100%);
+    top: 0;
+    z-index: 1;
+}
+
+.card__desc {
+    bottom: 1.5rem;
+    left: 1.75rem;
+    z-index: 10;
+}
+
+.card__title {
+    font-size: var(--h3-font-size);
+}
+
+.gallery__overflow {
+    position: relative;
+}
+
+.gallery__thumbnail {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.gallery__thumbnail-img {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
