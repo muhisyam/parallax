@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
+
 :root {
     --first-color: hsl(30, 16%, 50%);
     --text-color: #fff;
     --text-color-black: hsl(30, 8%, 15%);
     --body-color: hsl(30, 100%, 98%);
-    --h3-font-size: 1rem;
     --small-font-size: .813rem;
     --smaller-font-size: .75rem;
 }
@@ -31,6 +32,18 @@ img {
     height: auto;
 }
 
+.jumbo__title {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rem;
+    top: -10rem;
+    opacity: .8;
+}
+
 .gallery {
     height: 100vh;
     display: grid;
@@ -40,13 +53,13 @@ img {
 
 .card {
     position: relative;
-    width: 208px;
-    height: 268px;
-    border-radius: 3rem;
+    width: 630px;
+    height: 290px;
+    border-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    background-color: aquamarine;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card::after,
@@ -65,7 +78,9 @@ img {
     content: '';
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 32%, hsla(0, 0%, 0%, .3) 100%);
+    background: linear-gradient(180deg, 
+                hsla(0, 0%, 100%, 0) 32%, 
+                hsla(0, 0%, 0%, .5) 100%);
     top: 0;
     z-index: 1;
 }
@@ -77,9 +92,10 @@ img {
 }
 
 .card__title {
+    font-family: 'Vina Sans', cursive;
     color: var(--text-color);
     font-weight: 500;
-    font-size: var(--h3-font-size);
+    font-size: 2rem;
 }
 
 .gallery__overflow {
@@ -108,7 +124,7 @@ img {
 
 .gallery__card,
 .gallery__thumbs {
-    width: 260px;
+    width: 700px;
 }
 
 .gallery__card:hover .card__img {
@@ -123,10 +139,50 @@ img {
     height: 132px;
 }
 
+.swiper-slide-active .gallery__thumbnail {
+    transform: translateY(-1.25rem) scale(1.2);
+}
+
 .swiper-slide-next .gallery__thumbnail {
     transform: rotate(15deg);
 }
 
 .swiper-slide-prev .gallery__thumbnail {
     transform: rotate(-15deg);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: '';
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    font-size: 1.5rem;
+    color: var(--text-color-black);
+    top: 3.5rem;
+}
+
+.swiper-button-next {
+    right: 15rem;
+    transform: rotate(15deg);
+}
+
+.swiper-button-prev {
+    left: 15rem;
+    transform: rotate(-15deg);
+}
+
+.gallery-cards::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.swiper-horizontal.swiper-css-mode > .swiper-wrapper {
+    scroll-snap-type: initial;
 }
